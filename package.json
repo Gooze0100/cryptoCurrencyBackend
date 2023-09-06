@@ -1,0 +1,32 @@
+{
+  "name": "cryptoCurrencyBackend",
+  "version": "1.0.0",
+  "description": "Crypto currency back-end app",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "test": "mocha",
+    "doc": "npx jsdoc -c ./jsdoc.json"
+  },
+  "keywords": [
+    "Express",
+    "JavaScript",
+    "Node.js",
+    "MongoDB Atlas",
+    "Crypto Currency"
+  ],
+  "author": "Giedrius Kalnius",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^4.3.1"
+  },
+  "devDependencies": {
+    "docdash": "^2.0.2",
+    "jsdoc": "^4.0.2",
+    "mocha": "^10.2.0"
+  }
+}
