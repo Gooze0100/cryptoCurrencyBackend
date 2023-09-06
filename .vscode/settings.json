@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/8961790d-771c-48e6-bb15-18951c931d91/resourceGroups/cryptoCurrency/providers/Microsoft.Web/sites/CryptoCurrency",
+  "appService.deploySubpath": "."
+}

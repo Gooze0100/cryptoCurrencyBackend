@@ -1,6 +1,6 @@
 # Node weather API
 
-API for registering keywords and current selectedCrypto with timestamp in MongoDB.
+API for registering keywords and current selectedCrypto in MongoDB.
 
 ## Version
 
