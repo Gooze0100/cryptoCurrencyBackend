@@ -23,7 +23,7 @@ async function connect(tryCounter) {
     throw new Error(`Failed to connect ${MAX_TRIES} times to db`);
   }
   conn = new MongoClient(URL, {
-    useUnifiedTopology: false,
+    useUnifiedTopology: true,
     minPoolSize: 0,
     maxPoolSize: 3,
   });
