@@ -30,9 +30,10 @@ async function connect(tryCounter) {
     await listDatabases(client);
   } catch (err) {
     console.log(err);
-  } finally {
-    conn.close();
   }
+  // finally {
+  //   conn.close();
+  // }
   // try {
   //   await conn.connect();
   // } catch (err) {
