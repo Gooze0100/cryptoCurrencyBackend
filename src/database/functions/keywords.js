@@ -1,4 +1,4 @@
-import { getDb } from '../database.js';
+import { getDb, close } from '../database.js';
 
 /**
  * Returns all data from collection keywords in MongoDB.
@@ -20,6 +20,7 @@ async function getAll() {
       }
     )
     .toArray();
+  await close();
   return rows;
 }
 
@@ -40,6 +41,7 @@ async function insertOne(keyword) {
     keyword,
   };
   await db.collection('keywords').insertOne(newRecord);
+  await close();
   return newRecord;
 }
 

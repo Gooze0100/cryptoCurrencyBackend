@@ -77,7 +77,9 @@ Closes connection to database.
 async function close() {
   try {
     await conn.close();
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
   conn = null;
 }
 
