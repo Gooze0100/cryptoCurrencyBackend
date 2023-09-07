@@ -1,5 +1,0 @@
----
-applications:
-  - name: Crypto-currency-app
-    random-route: true
-    memory: 256M
