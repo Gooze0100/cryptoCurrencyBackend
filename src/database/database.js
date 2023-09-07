@@ -22,13 +22,16 @@ async function connect(tryCounter) {
   conn = new MongoClient(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    minPoolSize: 0,
-    maxPoolSize: 3,
+    // minPoolSize: 0,
+    // maxPoolSize: 3,
   });
   try {
     await conn.connect();
+    await listDatabases(client);
   } catch (err) {
     console.log(err);
+  } finally {
+    conn.close();
   }
   // try {
   //   await conn.connect();
@@ -48,14 +51,14 @@ Test specified connection by issuing db.stats().
  * @param {object} db  - connection to test
  * @returns {boolean} true if connection is alive
  */
-async function testConnection(db) {
-  try {
-    await db.stats();
-    return true;
-  } catch (err) {
-    return false;
-  }
-}
+// async function testConnection(db) {
+//   try {
+//     await db.stats();
+//     return true;
+//   } catch (err) {
+//     return false;
+//   }
+// }
 
 /**
  * Returns db for configured data base name from connection.
@@ -65,14 +68,29 @@ async function testConnection(db) {
  * @throws {Error} when fails to connect.
  */
 async function getDb() {
-  if (!conn) {
-    await connect();
+  // if (!conn) {
+  //   await connect();
+  // }
+  // const db = conn.db(DB_NAME);
+  // // if (testConnection(db)) {
+  // //   return db;
+  // // }
+  // conn = null;
+
+  conn = new MongoClient(URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // minPoolSize: 0,
+    // maxPoolSize: 3,
+  });
+  try {
+    await conn.connect();
+    await listDatabases(client);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    conn.close();
   }
-  const db = conn.db(DB_NAME);
-  if (testConnection(db)) {
-    return db;
-  }
-  conn = null;
   return getDb();
 }
 

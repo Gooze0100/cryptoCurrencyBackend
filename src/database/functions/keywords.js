@@ -20,7 +20,7 @@ async function getAll() {
       }
     )
     .toArray();
-  await close();
+  // await close();
   return rows;
 }
 
@@ -41,7 +41,7 @@ async function insertOne(keyword) {
     keyword,
   };
   await db.collection('keywords').insertOne(newRecord);
-  await close();
+  // await close();
   return newRecord;
 }
 

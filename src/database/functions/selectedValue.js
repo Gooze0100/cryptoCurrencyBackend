@@ -20,7 +20,7 @@ async function getAll() {
       }
     )
     .toArray();
-  await close();
+  // await close();
   return rows;
 }
 
@@ -41,7 +41,7 @@ async function insertOne(cryptoCurrency) {
     cryptoCurrency,
   };
   await db.collection('cryptoCurrency').insertOne(newRecord);
-  await close();
+  // await close();
   return newRecord;
 }
 
