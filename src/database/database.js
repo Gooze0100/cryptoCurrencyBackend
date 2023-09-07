@@ -1,10 +1,8 @@
-// import * as dotenv from 'dotenv';
-// dotenv.config({ path: './.env' });
-
 import { MongoClient } from 'mongodb';
 
-const URL = process.env.MongoDB_Url;
-const DB_NAME = process.env.Cluster_name;
+const URL =
+  'mongodb+srv://cryptoCurrency:FHErxS3YQMPWPgqn@cryptocurrency.jgb7rfn.mongodb.net/?retryWrites=true&w=majority';
+const DB_NAME = 'Crypto_currency';
 const MAX_TRIES = 3;
 
 /** @type {MongoClient} */
