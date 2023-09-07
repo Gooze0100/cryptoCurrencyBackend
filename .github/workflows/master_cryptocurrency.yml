@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'CryptoCurrency'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EEECD90E4F3B4DEDACCA00F145C48156 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A516B080EBE408684AF333441886D21 }}
           package: .
