@@ -1,10 +1,11 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { router as keywordsRouter } from './keywords.js';
 import { router as selectedValueRouter } from './selectedValue.js';
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 const WEB = 'web';
 const app = express();
 
