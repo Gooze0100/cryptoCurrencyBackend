@@ -13,12 +13,12 @@ let conn;
  * @throws {Error} when failed to connect specified number of times.
  */
 async function connect(tryCounter) {
-  if (!tryCounter) {
-    tryCounter = 1;
-  }
-  if (tryCounter > MAX_TRIES) {
-    throw new Error(`Failed to connect ${MAX_TRIES} times to db`);
-  }
+  // if (!tryCounter) {
+  //   tryCounter = 1;
+  // }
+  // if (tryCounter > MAX_TRIES) {
+  //   throw new Error(`Failed to connect ${MAX_TRIES} times to db`);
+  // }
   conn = new MongoClient(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -28,9 +28,14 @@ async function connect(tryCounter) {
   try {
     await conn.connect();
   } catch (err) {
-    conn = null;
-    await connect(++tryCounter);
+    console.log(err);
   }
+  // try {
+  //   await conn.connect();
+  // } catch (err) {
+  //   conn = null;
+  //   // await connect(++tryCounter);
+  // }
 }
 
 /**
