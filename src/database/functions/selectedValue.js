@@ -1,4 +1,4 @@
-import { getDb, close } from '../database.js';
+import { getDb } from '../database.js';
 
 /**
  * Returns all data from collection cryptoCurrency in MongoDB.
@@ -20,7 +20,6 @@ async function getAll() {
       }
     )
     .toArray();
-  await close();
   return rows;
 }
 
@@ -29,7 +28,7 @@ async function getAll() {
  *
  * @param {string} cryptoCurrency - cryptoCurrency which will be saved in DB
  * @returns {{_id: MongoId, cryptoCurrency: string}|null} inserted record;
- *    null if not found
+ * null if not found
  * @memberof cryptoCurrency
  */
 async function insertOne(cryptoCurrency) {
@@ -41,7 +40,6 @@ async function insertOne(cryptoCurrency) {
     cryptoCurrency,
   };
   await db.collection('cryptoCurrency').insertOne(newRecord);
-  await close();
   return newRecord;
 }
 

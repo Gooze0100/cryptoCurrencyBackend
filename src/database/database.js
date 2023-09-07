@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 
 const URL = process.env.MongoDB_Url;
 const DB_NAME = process.env.Cluster_name;
-const MAX_TRIES = 3;
+const MAX_TRIES = 5;
 
 /** @type {MongoClient} */
 let conn;
