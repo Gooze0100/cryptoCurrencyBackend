@@ -4,7 +4,7 @@
   "description": "Crypto currency back-end app",
   "type": "module",
   "scripts": {
-    "start": "node ./src/app.js dotenv/config dotenv_config_path=.env",
+    "start": "node ./src/app.js dotenv/config dotenv_config_path=./.env",
     "test": "mocha",
     "doc": "npx jsdoc -c ./jsdoc.json"
   },
