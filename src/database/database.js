@@ -86,7 +86,6 @@ async function getDb() {
   });
   try {
     await conn.connect();
-    await listDatabases(client);
   } catch (err) {
     console.log(err);
   } finally {
