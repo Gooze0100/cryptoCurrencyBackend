@@ -11,7 +11,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.static(WEB));
-
 app.use('/chart/:currency', express.static(WEB));
 
 app.use(bodyParser.json());

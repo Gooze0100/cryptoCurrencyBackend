@@ -1,8 +1,7 @@
 import { MongoClient } from 'mongodb';
 
-const URL =
-  'mongodb+srv://cryptoCurrency:FHErxS3YQMPWPgqn@cryptocurrency.jgb7rfn.mongodb.net/?retryWrites=true&w=majority';
-const DB_NAME = 'Crypto_currency';
+const URL = process.env.MongoDB_Url;
+const DB_NAME = process.env.Cluster_name;
 const MAX_TRIES = 3;
 
 /** @type {MongoClient} */
@@ -21,6 +20,7 @@ async function connect(tryCounter) {
     throw new Error(`Failed to connect ${MAX_TRIES} times to db`);
   }
   conn = new MongoClient(URL, {
+    useNewUrlParser: true,
     useUnifiedTopology: true,
     minPoolSize: 0,
     maxPoolSize: 3,
