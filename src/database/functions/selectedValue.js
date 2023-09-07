@@ -1,4 +1,4 @@
-import { getDb, close } from '../database.js';
+import { getDb } from '../database.js';
 
 /**
  * Returns all data from collection cryptoCurrency in MongoDB.
@@ -9,18 +9,7 @@ import { getDb, close } from '../database.js';
  */
 async function getAll() {
   const db = await getDb();
-  const rows = await db
-    .collection('cryptoCurrency')
-    .find(
-      {},
-      {
-        sort: {
-          timestamp: 1,
-        },
-      }
-    )
-    .toArray();
-  // await close();
+  const rows = await db.collection('cryptoCurrency').find().toArray();
   return rows;
 }
 
@@ -41,7 +30,6 @@ async function insertOne(cryptoCurrency) {
     cryptoCurrency,
   };
   await db.collection('cryptoCurrency').insertOne(newRecord);
-  // await close();
   return newRecord;
 }
 
