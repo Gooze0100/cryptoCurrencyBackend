@@ -4,7 +4,7 @@
   "description": "Crypto currency back-end app",
   "type": "module",
   "scripts": {
-    "start": "nodemon -r ./src/app.js",
+    "start": "node ./src/app.js",
     "test": "mocha",
     "doc": "npx jsdoc -c ./jsdoc.json"
   },
